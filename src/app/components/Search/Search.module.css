@@ -1,0 +1,35 @@
+.SearchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    max-width: 900px;
+    width: 100%;
+    margin: 1rem auto 0;
+}
+
+.SearchContainer input {
+    font-size: 1.25rem;
+    flex: 1;
+
+    background-color: transparent;
+    border: 2px solid #125cfc;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.875rem 1rem;
+}
+
+.SearchContainer button {
+    background-color: transparent;
+    border: 2px solid #125cfc;
+    border-radius: 4px;
+    height: 3.35rem;
+    max-width: 80px;
+    width: 100%;
+}
+
+.SearchContainer button:hover {
+    border-color: #3273ff;
+    background-color: #3273ff;
+    transition: all 0.4s;
+}

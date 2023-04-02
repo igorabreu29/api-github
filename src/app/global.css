@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141417;
+    height: 100vh;
+}
+
+body, button, input {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.map-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 4px;
+
+    background-color: black;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.map-container div p {
+    margin: 0.5rem 0;
+}

@@ -1,0 +1,12 @@
+.HeaderContainer {
+    background-color: black;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeaderContainer div {
+    max-width: 1120px;
+    width: 100%;
+}
