@@ -1,0 +1,66 @@
+.apiContainer {
+    border: 1px solid white;
+    height: 82vh;
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+.card {
+    height: 34rem;
+    max-width: 450px;
+    width: 100%;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: #333333;
+    height: 100%;
+}
+
+.cardContainer .images {
+    background: url(./assets/back.jpg);
+    background-size: cover;
+
+    width: 100%;
+    height: 7rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+}
+
+.avatar {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.cardContainer h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.cardContainer p {
+    font-size: 1.25rem;
+}
+
+.cardContainer a {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.cardContainer .link {
+    margin-top: 0.5rem;
+    margin-right: auto;
+    background-color: #1c1f26;
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+}

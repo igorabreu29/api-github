@@ -1,9 +1,11 @@
 'use client'
-import { FormEvent, useState } from "react"
 import './global.css'
-import { Search } from "./components/Search"
+import { FormEvent, useState } from "react"
+import Image from "next/image"
+import { Header } from "./components/Header"
+import styles from './Home.module.css'
 
-interface UserProps {
+interface UserInformations {
   bio: string
   avatar_url: string
   name: string
@@ -12,17 +14,18 @@ interface UserProps {
 }
 
 export default function Home() {
-  const [user, setUser] = useState<UserProps[]>([])
+  const [user, setUser] = useState<UserInformations[]>([])
 
   async function loadUser(e: FormEvent, search: string) {
     e.preventDefault()
 
     const response = await fetch(`https://api.github.com/users/${search}`)
-    const datas = await response.json()
-  
-    const { bio, avatar_url, name, id, login } = datas
 
-    const users: UserProps = {
+    const data = await response.json()
+  
+    const { bio, avatar_url, name, id, login } = data
+
+    const users: UserInformations = {
       bio,
       avatar_url,
       name,
@@ -30,24 +33,33 @@ export default function Home() {
       login
     }
 
+
     setUser([users])
   }
 
   return (
-    <main>
-      <Search loadUser={loadUser} />
-      <div className="map-container">
-        {user.map((item) => {
-          return (
-            <div key={item.id}>
-              <img src={item.avatar_url} alt="" width={170} height={150} />
-              <h2>Nome: {item.name}</h2>
-              <p>{item.bio}</p>
-              <a href={`https://github.com/${item.login}`} target="_blank">Link do perfil</a>
-            </div>
-          )
-        })}
-      </div>
-    </main>
+    <>
+      <Header loadUser={loadUser} />
+      <article className={styles.apiContainer}>
+        <section className={styles.card}>
+          {user.map(users => {
+            return (
+              <div className={styles.cardContainer} key={users.id}>
+                <div className={styles.images}>
+                  <Image src={users.avatar_url} alt="" width={70} height={70} className={styles.avatar} />
+                </div>
+                <h2>{users.name}</h2>
+                <p>{users.bio}</p>
+                <div className={styles.link}>
+                  <a href={`https://github.com/${users.login}`}>Link to perfil</a>
+                </div>
+              </div>
+            )
+          })}
+        </section>
+
+        <section></section>
+      </article>
+    </>
   )
 }
